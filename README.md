@@ -1,4 +1,4 @@
-# EN2KO KO2EN Translator - T5-small
+# en2ko-ko2en-translator-T5-small
 
 ### Main Packages  
 Huggingface, Papermill, DVC, WandB
@@ -11,7 +11,7 @@ Huggingface, Papermill, DVC, WandB
 
 ### Todos  
 - reformat data
-- write training Code
+- write training code
 - connect WandB
 - use Papermill
 - apply effective augmentation methods
