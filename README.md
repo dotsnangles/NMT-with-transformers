@@ -22,3 +22,4 @@ Sentencepiece
 - use Papermill if available
 - utilize DVC if needed
 - apply effective augmentation methods if have time
+- understand sentencepiece tokenizer and try with the data
