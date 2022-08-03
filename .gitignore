@@ -1,1 +1,6 @@
 data
+wandb
+mt5-small-finetuned-en-to-ko_original
+mt5-small-finetuned-en-to-ko
+save_model
+eval
