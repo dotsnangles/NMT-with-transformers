@@ -4,7 +4,7 @@
 Huggingface, Papermill, WandB, DVC
 
 ### Model  
-[mT5-small](https://huggingface.co/mt5-small)  
+[mT5-small](https://huggingface.co/mt5-small) [log](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small)  
 mBART  
 Opus-MT  
 Vanilla Transformer
