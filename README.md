@@ -8,7 +8,7 @@ mT5-small 기술과학/인공지능 [(WandB logs)](https://wandb.ai/dotsnangles/
 Huggingface, Papermill, WandB, DVC
 
 ### Models  
-[**mT5-small**](https://huggingface.co/mt5-small)  
+[**mT5-small**](https://huggingface.co/google/mt5-small)  
 [**mBART**](https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt)  
 Opus-MT  
 Vanilla Transformer
