@@ -5,7 +5,7 @@ Huggingface, Papermill, WandB, DVC
 
 ### Model  
 [**mT5-small**](https://huggingface.co/mt5-small) [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small)  
-mBART  
+[**mBART**](https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt)  
 Opus-MT  
 Vanilla Transformer
 
@@ -22,3 +22,4 @@ Sentencepiece
 - use Papermill if available
 - utilize DVC if needed
 - apply effective augmentation methods if have time
+- understand sentencepiece tokenizer and try with the data
