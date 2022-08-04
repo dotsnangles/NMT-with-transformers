@@ -1,8 +1,8 @@
 # NMT-with-transformers
 
 ### Logs
-mT5-small 도메인: 기술과학 섭도메인: 전체 [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small-with-the-domain-data)  
-mT5-small 도메인: 기술과학 섭도메인: 인공지능 [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small)
+mT5-small 기술과학/전체 [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small-with-the-domain-data)  
+mT5-small 기술과학/인공지능 [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small)
 
 ### Main Packages  
 Huggingface, Papermill, WandB, DVC
