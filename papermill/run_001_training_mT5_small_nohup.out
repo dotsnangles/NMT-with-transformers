@@ -1,0 +1,70 @@
+Input Notebook:  training_mT5_small.ipynb
+Output Notebook: ./papermill/run_001_training_mT5_small.ipynb
+Executing:   0%|          | 0/46 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   2%|▏         | 1/46 [00:01<01:04,  1.43s/cell]Executing:   4%|▍         | 2/46 [00:01<00:35,  1.25cell/s]Executing:  11%|█         | 5/46 [00:01<00:10,  3.82cell/s]Executing:  15%|█▌        | 7/46 [00:02<00:06,  5.66cell/s]Executing:  22%|██▏       | 10/46 [00:03<00:10,  3.59cell/s]Executing:  28%|██▊       | 13/46 [00:03<00:06,  5.36cell/s]Executing:  33%|███▎      | 15/46 [00:08<00:25,  1.20cell/s]Executing:  35%|███▍      | 16/46 [00:09<00:25,  1.15cell/s]Executing:  39%|███▉      | 18/46 [00:09<00:17,  1.65cell/s]Executing:  41%|████▏     | 19/46 [00:19<00:16,  1.65cell/s]Executing:  43%|████▎     | 20/46 [01:04<03:54,  9.03s/cell]Executing:  48%|████▊     | 22/46 [01:04<02:30,  6.25s/cell]Executing:  52%|█████▏    | 24/46 [01:04<01:36,  4.37s/cell]Executing:  57%|█████▋    | 26/46 [01:04<01:01,  3.05s/cell]Executing:  61%|██████    | 28/46 [01:05<00:38,  2.14s/cell]Executing:  63%|██████▎   | 29/46 [01:19<00:36,  2.14s/cell]Executing:  65%|██████▌   | 30/46 [02:06<02:51, 10.71s/cell]Executing:  70%|██████▉   | 32/46 [02:06<01:45,  7.51s/cell]Executing:  74%|███████▍  | 34/46 [02:06<01:03,  5.27s/cell]Executing:  78%|███████▊  | 36/46 [02:11<00:45,  4.50s/cell]Executing:  83%|████████▎ | 38/46 [02:14<00:28,  3.59s/cell]Executing:  85%|████████▍ | 39/46 [30:58:35<38:16:44, 19686.37s/cell]Executing:  85%|████████▍ | 39/46 [30:58:38<5:33:36, 2859.45s/cell]  
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/transformers/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/decorators.py", line 26, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/papermill/execute.py", line 122, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/papermill/execute.py", line 234, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [27]":
+---------------------------------------------------------------------------
+RuntimeError                              Traceback (most recent call last)
+Input In [27], in <cell line: 1>()
+----> 1 trainer.train()
+      2 wandb.finish()
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/transformers/trainer.py:1498, in Trainer.train(self, resume_from_checkpoint, trial, ignore_keys_for_eval, **kwargs)
+   1493     self.model_wrapped = self.model
+   1495 inner_training_loop = find_executable_batch_size(
+   1496     self._inner_training_loop, self._train_batch_size, args.auto_find_batch_size
+   1497 )
+-> 1498 return inner_training_loop(
+   1499     args=args,
+   1500     resume_from_checkpoint=resume_from_checkpoint,
+   1501     trial=trial,
+   1502     ignore_keys_for_eval=ignore_keys_for_eval,
+   1503 )
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/transformers/trainer.py:1860, in Trainer._inner_training_loop(self, batch_size, args, resume_from_checkpoint, trial, ignore_keys_for_eval)
+   1857     elif is_sagemaker_mp_enabled():
+   1858         smp.barrier()
+-> 1860     self._load_best_model()
+   1862 # add remaining tr_loss
+   1863 self._total_loss_scalar += tr_loss.item()
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/transformers/trainer.py:1985, in Trainer._load_best_model(self)
+   1983     state_dict = torch.load(best_model_path, map_location="cpu")
+   1984     # If the model is on the GPU, it still works!
+-> 1985     load_result = model.load_state_dict(state_dict)
+   1986 if not is_sagemaker_mp_enabled():
+   1987     self._issue_warnings_after_load(load_result)
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/torch/nn/modules/module.py:1604, in Module.load_state_dict(self, state_dict, strict)
+   1599         error_msgs.insert(
+   1600             0, 'Missing key(s) in state_dict: {}. '.format(
+   1601                 ', '.join('"{}"'.format(k) for k in missing_keys)))
+   1603 if len(error_msgs) > 0:
+-> 1604     raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+   1605                        self.__class__.__name__, "\n\t".join(error_msgs)))
+   1606 return _IncompatibleKeys(missing_keys, unexpected_keys)
+
+RuntimeError: Error(s) in loading state_dict for MT5ForConditionalGeneration:
+	Missing key(s) in state_dict: "encoder.embed_tokens.weight". 
+
