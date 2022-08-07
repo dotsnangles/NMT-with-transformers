@@ -29,5 +29,7 @@ SentencePiece
 - [ ] ~apply effective augmentation methods if have time~
 - [ ] understand SentencePiece and try it out with the data to pretrain a transformer model later
 - [ ] try out the generation methods and understand how they work
+  - https://huggingface.co/docs/transformers/main_classes/text_generation
+  - https://huggingface.co/docs/transformers/internal/generation_utils
 - [ ] evaluate the finetuned models with BLUE Score
 - [ ] come up with some ideas that can help translators work more efficiently utilizing transformer translators
