@@ -25,8 +25,8 @@ SentencePiece
 - [x] write training code
 - [x] connect to WandB
 - [x] use Papermill if available
-- ~utilize DVC if needed~
-- ~apply effective augmentation methods if have time~
+- [ ] ~utilize DVC if needed~
+- [ ] ~apply effective augmentation methods if have time~
 - [ ] understand SentencePiece and try it out with the data to pretrain a transformer model later
 - [ ] try out the generation methods and understand how they work
 - [ ] evaluate the finetuned models with BLUE Score
