@@ -1,0 +1,47 @@
+Input Notebook:  training_mT5_small_domain.ipynb
+Output Notebook: ./papermill/run_001_training_mT5_small_domain.ipynb
+Executing:   0%|          | 0/47 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   2%|▏         | 1/47 [00:01<00:47,  1.04s/cell]Executing:   4%|▍         | 2/47 [00:01<00:27,  1.61cell/s]Executing:  13%|█▎        | 6/47 [00:01<00:07,  5.66cell/s]Executing:  19%|█▉        | 9/47 [00:01<00:04,  8.67cell/s]Executing:  23%|██▎       | 11/47 [00:03<00:10,  3.47cell/s]Executing:  30%|██▉       | 14/47 [00:04<00:10,  3.09cell/s]Executing:  32%|███▏      | 15/47 [00:08<00:28,  1.13cell/s]Executing:  34%|███▍      | 16/47 [00:08<00:26,  1.15cell/s]Executing:  40%|████      | 19/47 [00:08<00:14,  1.99cell/s]Executing:  40%|████      | 19/47 [00:20<00:14,  1.99cell/s]Executing:  43%|████▎     | 20/47 [02:29<11:06, 24.69s/cell]Executing:  47%|████▋     | 22/47 [02:29<06:53, 16.53s/cell]Executing:  51%|█████     | 24/47 [02:29<04:18, 11.26s/cell]Executing:  57%|█████▋    | 27/47 [02:29<02:13,  6.68s/cell]Executing:  64%|██████▍   | 30/47 [02:29<01:12,  4.24s/cell]Executing:  64%|██████▍   | 30/47 [02:40<01:12,  4.24s/cell]Executing:  66%|██████▌   | 31/47 [04:48<06:29, 24.37s/cell]Executing:  70%|███████   | 33/47 [04:49<03:59, 17.13s/cell]Executing:  77%|███████▋  | 36/47 [04:49<01:55, 10.46s/cell]Executing:  81%|████████  | 38/47 [04:53<01:13,  8.15s/cell]Executing:  83%|████████▎ | 39/47 [05:10<01:05,  8.15s/cell]Kernel died while waiting for execute reply.
+Executing:  85%|████████▌ | 40/47 [112:59:47<110:18:33, 56730.51s/cell]Executing:  85%|████████▌ | 40/47 [112:59:47<19:46:27, 10169.69s/cell] 
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/nbclient/client.py", line 780, in _async_poll_for_reply
+    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/nbclient/util.py", line 97, in ensure_async
+    result = await obj
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/jupyter_client/channels.py", line 224, in get_msg
+    ready = await self.socket.poll(timeout)
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/nbclient/client.py", line 1006, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/execute.py", line 107, in execute_notebook
+    nb = papermill_engines.execute_notebook_with_engine(
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/engines.py", line 49, in execute_notebook_with_engine
+    return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/engines.py", line 359, in execute_notebook
+    cls.execute_managed_notebook(nb_man, kernel_name, log_output=log_output, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/engines.py", line 418, in execute_managed_notebook
+    return PapermillNotebookClient(nb_man, **final_kwargs).execute()
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/clientwrap.py", line 45, in execute
+    self.papermill_execute_cells()
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/papermill/clientwrap.py", line 72, in papermill_execute_cells
+    self.execute_cell(cell, index)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/nbclient/util.py", line 85, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/nbclient/util.py", line 60, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.10/site-packages/nbclient/client.py", line 1010, in async_execute_cell
+    raise DeadKernelError("Kernel died")
+nbclient.exceptions.DeadKernelError: Kernel died
