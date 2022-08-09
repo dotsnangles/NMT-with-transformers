@@ -1,0 +1,87 @@
+Input Notebook:  training_mT5_small_domain_ko2en.ipynb
+Output Notebook: ./papermill/run001_training_mT5_small_domain_ko2en.ipynb
+Executing:   0%|          | 0/47 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   2%|▏         | 1/47 [00:01<01:06,  1.44s/cell]Executing:   4%|▍         | 2/47 [00:01<00:36,  1.25cell/s]Executing:   9%|▊         | 4/47 [00:02<00:15,  2.71cell/s]Executing:  13%|█▎        | 6/47 [00:02<00:09,  4.30cell/s]Executing:  17%|█▋        | 8/47 [00:02<00:06,  6.04cell/s]Executing:  21%|██▏       | 10/47 [00:03<00:09,  4.00cell/s]Executing:  28%|██▊       | 13/47 [00:03<00:05,  6.21cell/s]Executing:  32%|███▏      | 15/47 [00:10<00:39,  1.22s/cell]Executing:  34%|███▍      | 16/47 [00:11<00:36,  1.16s/cell]Executing:  40%|████      | 19/47 [00:11<00:19,  1.45cell/s]Executing:  40%|████      | 19/47 [00:29<00:19,  1.45cell/s]Executing:  43%|████▎     | 20/47 [03:33<15:37, 34.73s/cell]Executing:  47%|████▋     | 22/47 [03:34<09:46, 23.44s/cell]Executing:  51%|█████     | 24/47 [03:34<06:08, 16.04s/cell]Executing:  57%|█████▋    | 27/47 [03:34<03:11,  9.56s/cell]Executing:  64%|██████▍   | 30/47 [03:34<01:43,  6.07s/cell]Executing:  64%|██████▍   | 30/47 [03:50<01:43,  6.07s/cell]Executing:  66%|██████▌   | 31/47 [07:33<10:49, 40.61s/cell]Executing:  70%|███████   | 33/47 [07:33<06:39, 28.55s/cell]Executing:  74%|███████▍  | 35/47 [07:33<04:00, 20.04s/cell]Executing:  79%|███████▊  | 37/47 [07:38<02:28, 14.85s/cell]Executing:  83%|████████▎ | 39/47 [07:42<01:27, 10.92s/cell]Executing:  83%|████████▎ | 39/47 [07:44<01:35, 11.91s/cell]
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/transformers/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/click/decorators.py", line 26, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/papermill/execute.py", line 122, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/home/ubuntu/anaconda3/envs/transformers/lib/python3.9/site-packages/papermill/execute.py", line 234, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [27]":
+---------------------------------------------------------------------------
+RuntimeError                              Traceback (most recent call last)
+Input In [27], in <cell line: 1>()
+----> 1 trainer = Seq2SeqTrainer(
+      2     model,
+      3     args,
+      4     train_dataset=tokenized_train,
+      5     eval_dataset=tokenized_val,
+      6     data_collator=data_collator,
+      7     tokenizer=tokenizer,
+      8     # callbacks=[es],
+      9 )
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/transformers/trainer.py:445, in Trainer.__init__(self, model, args, data_collator, train_dataset, eval_dataset, tokenizer, model_init, compute_metrics, callbacks, optimizers, preprocess_logits_for_metrics)
+    442 self.tokenizer = tokenizer
+    444 if self.place_model_on_device:
+--> 445     self._move_model_to_device(model, args.device)
+    447 # Force n_gpu to 1 to avoid DataParallel as MP will manage the GPUs
+    448 if self.is_model_parallel:
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/transformers/trainer.py:700, in Trainer._move_model_to_device(self, model, device)
+    699 def _move_model_to_device(self, model, device):
+--> 700     model = model.to(device)
+    701     # Moving a model to an XLA device disconnects the tied weights, so we have to retie them.
+    702     if self.args.parallel_mode == ParallelMode.TPU and hasattr(model, "tie_weights"):
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/torch/nn/modules/module.py:927, in Module.to(self, *args, **kwargs)
+    923         return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None,
+    924                     non_blocking, memory_format=convert_to_format)
+    925     return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+--> 927 return self._apply(convert)
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/torch/nn/modules/module.py:579, in Module._apply(self, fn)
+    577 def _apply(self, fn):
+    578     for module in self.children():
+--> 579         module._apply(fn)
+    581     def compute_should_use_set_data(tensor, tensor_applied):
+    582         if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+    583             # If the new tensor has compatible tensor type as the existing tensor,
+    584             # the current behavior is to change the tensor in-place using `.data =`,
+   (...)
+    589             # global flag to let the user control whether they want the future
+    590             # behavior of overwriting the existing tensor or not.
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/torch/nn/modules/module.py:602, in Module._apply(self, fn)
+    598 # Tensors stored in modules are graph leaves, and we don't want to
+    599 # track autograd history of `param_applied`, so we have to use
+    600 # `with torch.no_grad():`
+    601 with torch.no_grad():
+--> 602     param_applied = fn(param)
+    603 should_use_set_data = compute_should_use_set_data(param, param_applied)
+    604 if should_use_set_data:
+
+File ~/anaconda3/envs/transformers/lib/python3.9/site-packages/torch/nn/modules/module.py:925, in Module.to.<locals>.convert(t)
+    922 if convert_to_format is not None and t.dim() in (4, 5):
+    923     return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None,
+    924                 non_blocking, memory_format=convert_to_format)
+--> 925 return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+
+RuntimeError: CUDA out of memory. Tried to allocate 490.00 MiB (GPU 0; 22.20 GiB total capacity; 0 bytes already allocated; 199.06 MiB free; 0 bytes reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
