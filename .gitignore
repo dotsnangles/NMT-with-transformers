@@ -3,5 +3,6 @@ wandb
 mt5-small-finetuned-en-to-ko_original
 mt5-small-finetuned-en-to-ko
 mt5-small-finetuned-en-to-ko-subdomain
+mt5-small-finetuned-ko-to-en-domain
 save_model
 eval
