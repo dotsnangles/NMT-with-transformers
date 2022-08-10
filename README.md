@@ -11,6 +11,8 @@ Huggingface, Papermill, WandB, DVC
 ### Models  
 [**mT5-small**](https://huggingface.co/google/mt5-small)  
 [**mBART**](https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt)  
+[**KE-T5-small**](https://huggingface.co/KETI-AIR/ke-t5-small)  
+[**KE-T5-base**](https://huggingface.co/KETI-AIR/ke-t5-base)  
 Opus-MT  
 Vanilla Transformer
 
