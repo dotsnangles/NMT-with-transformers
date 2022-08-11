@@ -35,3 +35,4 @@ SentencePiece
   - https://huggingface.co/docs/transformers/internal/generation_utils
 - [ ] evaluate the finetuned models with BLUE Score
 - [ ] come up with some ideas that can help translators work more efficiently utilizing transformer translators
+- [ ] [Research on SOTA of NMT](https://paperswithcode.com/sota/machine-translation-on-wmt2014-english-german)
