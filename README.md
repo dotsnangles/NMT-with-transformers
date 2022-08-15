@@ -5,8 +5,8 @@ mT5-small Ko2En 기술과학/전체 [(WandB logs)](https://wandb.ai/dotsnangles/
 mT5-small En2Ko 기술과학/전체 [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small-with-the-domain-data)  
 mT5-small En2Ko 기술과학/인공지능 [(WandB logs)](https://wandb.ai/dotsnangles/en2ko-translator-mt5-small)
 
-### Main Packages  
-Huggingface, Papermill, WandB, DVC
+### Dataset  
+[AIHub기술과학 분야 한영 번역 병렬 말뭉치 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=71266)
 
 ### Models  
 [**mT5-small**](https://huggingface.co/google/mt5-small)  
@@ -15,12 +15,6 @@ Huggingface, Papermill, WandB, DVC
 [**KE-T5-base**](https://huggingface.co/KETI-AIR/ke-t5-base)  
 Opus-MT  
 Vanilla Transformer
-
-### Tokenizer
-SentencePiece
-
-### Dataset  
-[AIHub기술과학 분야 한영 번역 병렬 말뭉치 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=71266)
 
 ### Todos  
 - [x] reformat data
