@@ -1,4 +1,5 @@
 # NMT-with-transformers
+(Postponed)
 
 ### Training logs
 mT5-small Ko2En 기술과학/전체 [(WandB logs)](https://wandb.ai/dotsnangles/ko2en-translator-mt5-small-with-the-domain-data)  
